@@ -1,6 +1,14 @@
 #  Wrapper script from which to organize and call scripts.
 #
 #
+
+# Convention for scripts:
+#  Description is the first line in the script file as a commented line.
+#  Usage argument names are the second line in the script file as a commented line.
+#  Example arguments go on the third line of the script file as a commented line.
+#  You may choose to wrap (parentheses) around optional arguments.
+#  Text must start at character position 4 to accommodate languages using # or // for comments.
+
 get_line_from_file() { local lineNum=$1; local file=$2
   head -$lineNum $file | tail -n -1 | sed 's/\\n/\n/g' | tail -c +4
 }
